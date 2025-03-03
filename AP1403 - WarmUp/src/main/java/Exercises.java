@@ -81,7 +81,29 @@ public class Exercises {
      */
     public char[][] generateTriangle(int n) {
         // todo
-        return null;
+        char[][] triangle_array = new char [n][];
+
+        for (int i = 0; i < n; i++)
+        {
+            triangle_array[i] = new char[i + 1];
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < (i + 1); j++)
+            {
+                if (j == 0 || j == (i + 1))
+                {
+                    triangle_array[i][j] = '*';
+                }
+                else
+                {
+                    triangle_array[i][j] = ' ';
+                }
+            }
+        }
+
+        return triangle_array;
     }
 
     public static void main(String[] args) {
