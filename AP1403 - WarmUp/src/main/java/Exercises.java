@@ -29,7 +29,36 @@ public class Exercises {
      */
     public long fibonacciIndex(long n) {
         // todo
-        return -1;
+        if (n < 0)
+        {
+            return -1;
+        }
+
+        if (n == 0)
+        {
+            return 0;
+        }
+
+        int previous_number = 0;
+        int current_number = 1;
+        int index_counter = 1;
+
+        while (current_number < n)
+        {
+            int temp = previous_number;
+            current_number = current_number + previous_number;
+            previous_number = temp;
+            index_counter++;
+        }
+
+        if (current_number == n)
+        {
+            return index_counter;
+        }
+        else
+        {
+            return -1;
+        }
     }
 
     /*
