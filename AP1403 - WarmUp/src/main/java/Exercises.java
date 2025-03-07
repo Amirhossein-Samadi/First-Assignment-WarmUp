@@ -45,7 +45,7 @@ public class Exercises {
 
         while (current_number < n)
         {
-            int temp = previous_number;
+            int temp = current_number;
             current_number = current_number + previous_number;
             previous_number = temp;
             index_counter++;
@@ -108,5 +108,6 @@ public class Exercises {
 
     public static void main(String[] args) {
         // you can test your code here, but then it should be checked with test cases
+        System.out.println("Hello World");
     }
 }
