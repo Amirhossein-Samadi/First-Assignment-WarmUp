@@ -5,7 +5,20 @@ public class Exercises {
      */
     public boolean isPrime(long n) {
         // todo
-        return false;
+        if (n <= 1)
+        {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(n); i++)
+        {
+            if (n % i == 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /*
@@ -16,7 +29,36 @@ public class Exercises {
      */
     public long fibonacciIndex(long n) {
         // todo
-        return -1;
+        if (n < 0)
+        {
+            return -1;
+        }
+
+        if (n == 0)
+        {
+            return 0;
+        }
+
+        int previous_number = 0;
+        int current_number = 1;
+        int index_counter = 1;
+
+        while (current_number < n)
+        {
+            int temp = current_number;
+            current_number = current_number + previous_number;
+            previous_number = temp;
+            index_counter++;
+        }
+
+        if (current_number == n)
+        {
+            return index_counter;
+        }
+        else
+        {
+            return -1;
+        }
     }
 
     /*
@@ -39,7 +81,29 @@ public class Exercises {
      */
     public char[][] generateTriangle(int n) {
         // todo
-        return null;
+        char[][] triangle_array = new char [n][];
+
+        for (int i = 0; i < n; i++)
+        {
+            triangle_array[i] = new char[i + 1];
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < (i + 1); j++)
+            {
+                if (j == 0 || j == (i + 1))
+                {
+                    triangle_array[i][j] = '*';
+                }
+                else
+                {
+                    triangle_array[i][j] = ' ';
+                }
+            }
+        }
+
+        return triangle_array;
     }
 
     public static void main(String[] args) {
